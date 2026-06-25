@@ -23,25 +23,23 @@ OpenAI's Codex and GPT models have unique strengths — exceptional code generat
 
 ## How to Use
 
-### Option 1: Cursor / Windsurf / Cline Custom Instructions
+### Method 1: System Prompt in Your AI Tool
 
-Copy the contents of the skill file into your AI coding tool's system prompt or custom instructions field.
+Copy the full contents of `frontend-skills.md` or `backend-skills.md` into your AI coding assistant's system prompt, custom instructions, or rules file. This works with ChatGPT, GPT-4, Cursor, Windsurf, GitHub Copilot, and any tool that supports custom system-level instructions.
 
-**With Cline:** Place the `.md` file in your project and reference it via `.clinerules`.
+### Method 2: Direct Prompt Injection
 
-### Option 2: Direct Prompt Injection
-
-Paste the entire skill prompt at the beginning of your conversation with ChatGPT, GPT-4, or any OpenAI model:
+Paste the skill prompt at the start of your conversation with ChatGPT or any OpenAI model:
 
 ```
-[Paste frontend-skills.md or backend-skills.md content here]
+[Paste the skill file content here]
 
 ---
 
-Now, [your task here]
+[Your task here]
 ```
 
-### Option 3: OpenAI API System Message (Recommended)
+### Method 3: OpenAI API System Message (Recommended)
 
 Use the skill prompt as the `system` message in the OpenAI API:
 
@@ -55,7 +53,7 @@ const response = await openai.chat.completions.create({
 });
 ```
 
-### Option 4: Custom GPTs
+### Method 4: Custom GPTs
 
 Create a custom GPT with the skill prompt as its instructions:
 1. Go to ChatGPT → Explore GPTs → Create
@@ -63,9 +61,9 @@ Create a custom GPT with the skill prompt as its instructions:
 3. Configure name, description, and capabilities
 4. Use your custom Principal Frontend/Backend Engineer GPT for all coding tasks
 
-### Option 5: GitHub Copilot / Custom Instructions
+### Method 5: IDE Rules File
 
-Add the content to your IDE's custom instructions/rules file. For VS Code with GitHub Copilot, add to `.github/copilot-instructions.md`.
+Add the content to your IDE's rules file (e.g., `.cursorrules`, `.github/copilot-instructions.md`, or your editor's equivalent) for automatic application to every coding session within that project.
 
 ---
 
